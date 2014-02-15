@@ -22,6 +22,11 @@ final class IsEndOfMonthMatcher310 extends TypeSafeMatcher<String> {
     return HaggiChecker.isEndOfMonth(dateTime);
   }
 
+  @Override
+  public String toString() {
+    return "java.time";
+  }
+
   @Factory
   static Matcher<String> isEndOfMonth310() {
     return INSTANCE;

@@ -13,7 +13,7 @@ import org.hamcrest.TypeSafeMatcher;
 
 final class IsEndOfMonthMatcherCalendar extends TypeSafeMatcher<String> {
 
-  private static final IsEndOfMonthMatcher310 INSTANCE = new IsEndOfMonthMatcher310();
+  private static final IsEndOfMonthMatcherCalendar INSTANCE = new IsEndOfMonthMatcherCalendar();
 
   @Override
   public void describeTo(Description description) {
@@ -23,7 +23,7 @@ final class IsEndOfMonthMatcherCalendar extends TypeSafeMatcher<String> {
   @Override
   protected boolean matchesSafely(String dateString) {
     try {
-      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
       Date date = dateFormat.parse(dateString + "+0100");
       Calendar calendar = GregorianCalendar.getInstance();
       calendar.setTime(date);
@@ -31,6 +31,11 @@ final class IsEndOfMonthMatcherCalendar extends TypeSafeMatcher<String> {
     } catch (ParseException e) {
       throw new RuntimeException("could not parse '" + dateString + "'", e);
     }
+  }
+  
+  @Override
+  public String toString() {
+    return "java.util.Calendar";
   }
 
   @Factory
