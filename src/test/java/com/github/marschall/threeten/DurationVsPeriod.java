@@ -2,9 +2,6 @@ package com.github.marschall.threeten;
 
 import static org.junit.Assert.assertEquals;
 
-import java.io.IOException;
-import java.lang.invoke.MethodHandles;
-import java.net.NetworkInterface;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -12,7 +9,6 @@ import java.time.Month;
 import java.time.Period;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.Enumeration;
 
 import org.junit.Test;
 
