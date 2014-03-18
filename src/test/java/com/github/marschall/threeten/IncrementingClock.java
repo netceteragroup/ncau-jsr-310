@@ -11,7 +11,6 @@ import java.util.concurrent.atomic.AtomicLong;
  */
 class IncrementingClock extends Clock {
   
-//  static final long START = 1395159294605L;
   static final long START = 1395159294L;
   
   private final ZoneId zone;
@@ -44,10 +43,6 @@ class IncrementingClock extends Clock {
   @Override
   public Instant instant() {
     return Instant.ofEpochSecond(this.epochSecond.getAndIncrement());
-  }
-  
-  public static void main(String[] args) {
-    System.out.println(System.currentTimeMillis());
   }
 
 }
