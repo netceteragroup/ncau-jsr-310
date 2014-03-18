@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
-import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.time.Duration;
 import java.time.LocalDate;
