@@ -18,6 +18,10 @@ import org.junit.Test;
 
 public class DurationVsPeriod {
   
+  /**
+   * Verifies the different behavior of {@link Duration} and
+   * {@link Period}.
+   */
   @Test
   public void plusOneDay() {
     ZoneId zurich = ZoneId.of("Europe/Zurich");
@@ -34,6 +38,10 @@ public class DurationVsPeriod {
   }
   
   
+  /**
+   * Verifies that {@link ZonedDateTime#plusDays(long)} adds periods
+   * and not durations.
+   */
   @Test
   public void plusDasy() {
     ZoneId zurich = ZoneId.of("Europe/Zurich");
