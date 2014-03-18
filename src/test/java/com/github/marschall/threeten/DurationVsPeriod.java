@@ -34,6 +34,20 @@ public class DurationVsPeriod {
     assertEquals(1, zonedDateTime.plus(period).getHour());
   }
   
+  
+  @Test
+  public void plusDasy() {
+    ZoneId zurich = ZoneId.of("Europe/Zurich");
+    LocalTime time = LocalTime.of(1, 30, 0);
+    LocalDate date = LocalDate.of(2014, Month.MARCH, 30);
+//    LocalDate date = LocalDate.of(2014, 3, 30);
+    ZonedDateTime zonedDateTime = ZonedDateTime.of(date, time, zurich);
+    
+    Period period = Period.ofDays(1);
+    
+    assertEquals(zonedDateTime.plus(period), zonedDateTime.plusDays(1L));
+  }
+  
   @Test
 //  @Ignore
   public void theJavaBot() throws IOException {

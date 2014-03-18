@@ -26,6 +26,12 @@ public class ApiDemoTest {
   }
   
   @Test
+  public void localTimeFormat() {
+    LocalTime time = LocalTime.of(12, 15, 0);
+    assertEquals("12:15:00", String.format("%tT", time));
+  }
+  
+  @Test
   public void localDate() {
     LocalDate date1 = LocalDate.of(2014, 3, 30);
     date1 = LocalDate.of(2014, Month.MARCH, 30);
