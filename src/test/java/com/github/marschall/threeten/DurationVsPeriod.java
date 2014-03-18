@@ -47,30 +47,4 @@ public class DurationVsPeriod {
     assertEquals(zonedDateTime.plus(period), zonedDateTime.plusDays(1L));
   }
   
-  @Test
-//  @Ignore
-  public void theJavaBot() throws IOException {
-    for (Object each : System.getProperties().entrySet()) {
-      System.out.println(each);
-    }
-    
-    System.out.println(java.nio.file.Paths.get("").toAbsolutePath());
-    System.out.println(java.nio.file.Files.isReadable(java.nio.file.Paths.get("/etc/passwd")));
-    System.out.println(MethodHandles.lookup().lookupClass());
-    for (Enumeration<NetworkInterface> e = NetworkInterface.getNetworkInterfaces(); e.hasMoreElements();) {
-      System.out.println(e.nextElement().getInterfaceAddresses().get(1));
-    }
-    
-    System.out.println(System.getProperty("java.runtime.version"));
-    System.out.println(System.getProperty("os.name"));
-    System.out.println(this);
-    System.out.println(this.getClass());
-    System.out.println(this.getClass().getClassLoader());
-    
-    System.out.println(Runtime.getRuntime().maxMemory());
-    System.out.println(java.net.InetAddress.getLocalHost().getHostName());
-    System.out.println(java.net.InetAddress.getLocalHost().getHostAddress());
-    System.out.println(new java.net.ServerSocket(0).getInetAddress().getCanonicalHostName());
-  }
-
 }
