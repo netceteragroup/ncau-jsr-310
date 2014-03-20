@@ -58,8 +58,7 @@ public class HaggiChecker {
   static boolean isEndOfMonth(ZonedDateTime now) {
     ZonedDateTime lastDayOfMonth = now.with(lastDayOfMonth());
     return now.getDayOfMonth() == lastDayOfMonth.getDayOfMonth();
-    // return now.get(ChronoField.DAY_OF_MONTH) ==
-    // now.range(ChronoField.DAY_OF_MONTH).getMaximum();
+    // return now.get(ChronoField.DAY_OF_MONTH) == now.range(ChronoField.DAY_OF_MONTH).getMaximum();
   }
 
   static boolean isEndOfMonth(Calendar calendar) {
