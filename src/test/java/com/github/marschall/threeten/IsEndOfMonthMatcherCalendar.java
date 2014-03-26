@@ -23,8 +23,8 @@ final class IsEndOfMonthMatcherCalendar extends TypeSafeMatcher<String> {
   @Override
   protected boolean matchesSafely(String dateString) {
     try {
-      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
-      Date date = dateFormat.parse(dateString + "+0100");
+      SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssz");
+      Date date = dateFormat.parse(dateString + "CET");
       Calendar calendar = GregorianCalendar.getInstance();
       calendar.setTime(date);
       return HaggiChecker.isEndOfMonth(calendar);
