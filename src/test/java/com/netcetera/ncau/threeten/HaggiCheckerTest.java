@@ -1,7 +1,7 @@
-package com.github.marschall.threeten;
+package com.netcetera.ncau.threeten;
 
-import static com.github.marschall.threeten.IsEndOfMonthMatcher310.isEndOfMonth310;
-import static com.github.marschall.threeten.IsEndOfMonthMatcherCalendar.isEndOfMonthCalendar;
+import static com.netcetera.ncau.threeten.IsEndOfMonthMatcher310.isEndOfMonth310;
+import static com.netcetera.ncau.threeten.IsEndOfMonthMatcherCalendar.isEndOfMonthCalendar;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
 

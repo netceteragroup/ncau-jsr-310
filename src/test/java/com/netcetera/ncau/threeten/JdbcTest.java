@@ -1,4 +1,4 @@
-package com.github.marschall.threeten;
+package com.netcetera.ncau.threeten;
 
 import static org.junit.Assert.assertEquals;
 import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.DERBY;
