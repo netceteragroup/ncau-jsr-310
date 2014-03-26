@@ -1,4 +1,4 @@
-package com.github.marschall.threeten;
+package com.netcetera.ncau.threeten;
 
 import java.time.ZonedDateTime;
 
@@ -6,6 +6,8 @@ import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+
+import com.netcetera.ncau.threeten.HaggiChecker;
 
 final class IsEndOfMonthMatcher310 extends TypeSafeMatcher<String> {
 

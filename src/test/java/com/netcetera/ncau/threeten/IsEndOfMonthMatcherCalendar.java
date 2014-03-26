@@ -1,4 +1,4 @@
-package com.github.marschall.threeten;
+package com.netcetera.ncau.threeten;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -10,6 +10,8 @@ import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+
+import com.netcetera.ncau.threeten.HaggiChecker;
 
 final class IsEndOfMonthMatcherCalendar extends TypeSafeMatcher<String> {
 

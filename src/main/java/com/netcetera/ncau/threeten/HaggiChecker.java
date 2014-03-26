@@ -1,4 +1,4 @@
-package com.github.marschall.threeten;
+package com.netcetera.ncau.threeten;
 
 import static java.time.temporal.TemporalAdjusters.lastDayOfMonth;
 import static java.util.Calendar.DAY_OF_MONTH;
