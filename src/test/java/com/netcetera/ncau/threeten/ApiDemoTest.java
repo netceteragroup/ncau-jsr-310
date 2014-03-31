@@ -1,8 +1,13 @@
 package com.netcetera.ncau.threeten;
 
+import static java.time.temporal.ChronoField.HOUR_OF_DAY;
+import static java.time.temporal.ChronoField.MINUTE_OF_HOUR;
+import static java.time.temporal.ChronoField.SECOND_OF_MINUTE;
 import static java.time.temporal.ChronoUnit.SECONDS;
 import static org.junit.Assert.assertEquals;
 
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -19,8 +24,7 @@ import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Locale;
 
-import static java.time.temporal.ChronoField.*;
-
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ApiDemoTest {
@@ -95,6 +99,29 @@ public class ApiDemoTest {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d MMM uuuu", Locale.US);
     LocalDate date = LocalDate.of(2007, Month.DECEMBER, 3);
     assertEquals("3 Dec 2007", date.format(formatter));
+  }
+
+  @Test
+  public void javaUtilFormatter() {
+    LocalDate date = LocalDate.of(2007, Month.DECEMBER, 3);
+    assertEquals("Duke's Birthday: 3 Dec 2007", String.format("Duke's Birthday: %1$te %1$tb %1$tY", date));
+  }
+  
+  @Test
+  @Ignore("does not work")
+  public void simpleDateFormat() {
+    LocalDate date = LocalDate.of(2007, Month.DECEMBER, 3);
+    SimpleDateFormat format = new SimpleDateFormat("d MMM yyyy");
+    assertEquals("Duke Birthday: 3 Dec 2007", format.format(date));
+  }
+  
+  @Test
+  @Ignore("does not work")
+  public void messageFormat() {
+    LocalDate date = LocalDate.of(2007, Month.DECEMBER, 3);
+    String format = MessageFormat.format(
+        "Duke Birthday: {0,date,d MMM yyyy}", date);
+    assertEquals("Duke Birthday: 3 Dec 2007", format);
   }
 
   @Test
