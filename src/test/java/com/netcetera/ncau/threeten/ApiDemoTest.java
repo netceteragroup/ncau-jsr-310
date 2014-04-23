@@ -77,6 +77,13 @@ public class ApiDemoTest {
     OffsetDateTime offsetDate = OffsetDateTime.of(dateTime, offset);
     assertEquals(zonedDate.toInstant(), offsetDate.toInstant());
   }
+  
+  @Test
+  public void conversionToLocalDate() {
+    LocalDateTime dateTime = LocalDateTime.parse("2014-03-28T10:15:30");
+    LocalDate date = LocalDate.parse("2014-03-28");
+    assertEquals(date, dateTime.toLocalDate());
+  }
 
   @Test
   public void parse() {
