@@ -9,6 +9,7 @@ import static org.junit.Assert.assertEquals;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -22,6 +23,7 @@ import java.time.format.DateTimeFormatterBuilder;
 import java.time.format.SignStyle;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
+import java.util.Date;
 import java.util.Locale;
 
 import org.junit.Ignore;
@@ -105,6 +107,24 @@ public class ApiDemoTest {
   public void javaUtilFormatter() {
     LocalDate date = LocalDate.of(2007, Month.DECEMBER, 3);
     assertEquals("Duke's Birthday: 3 Dec 2007", String.format("Duke's Birthday: %1$te %1$tb %1$tY", date));
+  }
+  
+  @Test
+  public void conversionDateToDuration() {
+    Date date1 = new Date(1L);
+    Date date2 = new Date(100001L);
+    Duration duration = Duration.between(date1.toInstant(), date2.toInstant());
+    assertEquals(100L, duration.getSeconds());
+    assertEquals(0L, duration.getNano());
+    assertEquals(100L, duration.get(ChronoUnit.SECONDS));
+    assertEquals(0L, duration.get(ChronoUnit.NANOS));
+  }
+  
+  @Test
+  public void conversionDateToZoned() {
+    Date date = new Date(100001L);
+    ZonedDateTime zonedDateTime = ZonedDateTime.ofInstant(date.toInstant(), ZoneOffset.UTC);
+    assertEquals(1970, zonedDateTime.getYear());
   }
   
   @Test
